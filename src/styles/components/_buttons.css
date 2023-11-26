@@ -1,0 +1,19 @@
+.btn {
+  padding: 0.5em 1em;
+  margin: 2em;
+  text-align: center;
+  font-weight: 700;
+  border: 1px solid transparent;
+  vertical-align: middle;
+  font-size: large;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  text-shadow: none;
+  background-color: var(--btn);
+  color: var(--secondary-color);
+}
+
+.btn:hover {
+  background-color: var(--btn-hover);
+}

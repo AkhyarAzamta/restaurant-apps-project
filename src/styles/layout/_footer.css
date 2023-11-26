@@ -1,0 +1,9 @@
+footer {
+  padding: 2em;
+  /* width: 100%;eee */
+  text-align: center;
+  margin-top: 3em;
+  border-top: 3px groove var(--font-color);
+  background-color: var(--secondary-color);
+}
+

@@ -1,0 +1,113 @@
+nav {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3em;
+  border-radius: 3em;
+  height: 75px;
+  z-index: 20;
+}
+
+.logo-img {
+  width: 50px;
+}
+
+.logo-content {
+  display: flex;
+
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  object-fit: cover;
+  width: 100%;
+  text-align: center;
+  background-position: center;
+  padding: 0 10%;
+  box-sizing: border-box;
+  background: url('./images/hero-image_2.jpg');
+}
+
+.explore {
+  position: absolute;
+  top: -80px;
+  padding: 8px;
+  left: 0;
+  z-index: 10;
+  color: white;
+  background-color: var(--btn);
+}
+
+.explore:focus {
+  top: 0;
+}
+
+.menu {
+  display: none;
+  width: 25px;
+  font-size: 25px;
+  color: var(--primary-color);
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
+.font-brand {
+  font-size: x-large;
+  padding: 0.4em 0;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px #000;
+  color: var(--bg-color);
+}
+
+.navbar-list {
+  display: flex;
+  font-size: medium;
+  margin-bottom: 0;
+  padding-left: 0;
+  flex-wrap: wrap;
+  list-style: none;
+  transition: ease;
+}
+
+.navbar-item {
+  box-sizing: border-box;
+  line-height: 24px;
+}
+
+.navbar-item a {
+  display: inline-block;
+  padding: 0.7rem;
+  font-size: 1.3em;
+  text-decoration: none;
+  text-shadow: 2px 2px 1px #000;
+  color: var(--bg-color);
+}
+
+.navbar-item button {
+  border: 0 solid transparent;
+  padding: 0.9rem;
+  cursor: pointer;
+  font-size: 1.3;
+  vertical-align: middle;
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.navbar-item a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--navbar-hover);
+}
+
+.navbar-item button:hover {
+  text-decoration: underline;
+  color: var(--navbar-hover);
+  cursor: pointer;
+}
