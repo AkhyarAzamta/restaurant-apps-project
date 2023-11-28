@@ -24,10 +24,11 @@ function getRestaurants(data) {
   data.restaurants.forEach((resto, i) => {
     restoHTML += `
       <div tabindex="0" class="card">
-        <div class="img-container">
-          <img tabindex="0" class="card-image" alt="${resto.name}" src="${resto.pictureId}"/>
-          <span tabindex="0" class="card-rating">
-            <i title="ratings" class="fa fa-star"></i>
+      <div class="img-container">
+      <span class="city">${resto.city}</span>
+      <img tabindex="0" class="card-image" alt="${resto.name}" src="${resto.pictureId}"/>
+      <span tabindex="0" class="card-rating">
+      <i title="ratings" class="fa fa-star"></i>
             <span>${resto.rating}</span>
           </span>
         </div>
