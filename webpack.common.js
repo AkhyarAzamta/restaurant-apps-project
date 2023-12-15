@@ -1,6 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies */
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const path = require('path');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/scripts/index.js'),
@@ -30,6 +31,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
+      favicon: path.resolve(__dirname, 'src/public/favicon.ico'),
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -39,5 +41,6 @@ module.exports = {
         },
       ],
     }),
+
   ],
 };

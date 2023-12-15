@@ -1,3 +1,7 @@
+.container {
+  display: contents;
+}
+
 .container_text {
   margin: auto 0;
   align-self: center;
@@ -35,7 +39,8 @@
   text-align: center;
 }
 
-#explore {
+#explore,
+#fav-resto {
   display: grid;
   place-items: center;
   grid-row-gap: 1.5em;
@@ -74,14 +79,6 @@
   padding: 0.3em 0.8em 0.3em 0;
   font-size: smaller;
   color: yellow;
-}
-
-.img-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  max-height: 600px;
-  transition: transform 0.5s ease;
 }
 
 .city {

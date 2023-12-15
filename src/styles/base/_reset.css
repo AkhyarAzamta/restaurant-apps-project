@@ -13,13 +13,24 @@
   margin: 0;
 }
 
+.link {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  background-color: var(--btn);
+  color: white;
+  padding: 8px;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 body {
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
   color: var(--font-color);
-}
-
-body {
   margin: 0;
 }
 

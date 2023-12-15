@@ -76,6 +76,10 @@ nav {
   transition: ease;
 }
 
+.navbar-list-block {
+  display: flex;
+}
+
 .navbar-item {
   box-sizing: border-box;
   line-height: 24px;

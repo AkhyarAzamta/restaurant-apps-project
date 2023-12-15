@@ -6,7 +6,9 @@
 @import 'base/_reset.css';
 @import 'base/_typography.css';
 @import 'components/_buttons.css';
+@import 'components/_like.css';
 @import 'layout/_header.css';
 @import 'layout/_footer.css';
+@import 'pages/_detail.css';
 @import 'pages/_home.css';
 @import 'responsive/_responsive.css';
