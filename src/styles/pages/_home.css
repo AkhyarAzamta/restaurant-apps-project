@@ -1,5 +1,5 @@
 .container {
-  display: contents;
+  display: contents !important;
 }
 
 .container_text {
@@ -54,9 +54,13 @@
   border-radius: 15px;
   overflow: hidden;
   cursor: pointer;
-  transition: 0.3s;
+  transition: top ease 0.4s;
   box-shadow: 10px 10px 5px 0px var(--secondary-color);
   background-color: var(--bg-color);
+}
+
+.card-a-tag:focus {
+  outline: 4px dashed orange;
 }
 
 .card:hover {

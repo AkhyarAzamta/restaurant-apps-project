@@ -14,17 +14,26 @@
 }
 
 .link {
-  position: absolute;
-  top: -80px;
-  left: 0;
   background-color: var(--btn);
-  color: white;
-  padding: 8px;
-  z-index: 10;
+  border-radius: 4px;
+  color: var(--bg-color);
+  font-weight: 700;
+  left: 0;
+  line-height: 44px;
+  margin: 0 auto;
+  padding: 0 10px;
+  position: absolute;
+  right: 0;
+  top: -50px;
+  transition: 0.35s;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  z-index: 1500;
 }
 
-.skip-link:focus {
-  top: 0;
+.link:focus {
+  top: 35px;
 }
 
 body {
@@ -41,7 +50,6 @@ html {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
-  overflow-x: hidden;
   background-color: var(--primary-color);
 }
 

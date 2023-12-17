@@ -13,7 +13,7 @@ const app = new App({
 });
 
 window.addEventListener('hashchange', () => {
-  document.querySelector('.container').scrollIntoView();
+  document.querySelector('#content').scrollIntoView();
   app.renderPage();
 });
 

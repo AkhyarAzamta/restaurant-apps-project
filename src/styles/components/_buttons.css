@@ -10,6 +10,8 @@
   cursor: pointer;
   text-decoration: none;
   text-shadow: none;
+  min-width: 45px;
+  min-height: 45px;
   background-color: var(--btn);
   color: var(--secondary-color);
 }
@@ -26,7 +28,9 @@
   vertical-align: middle;
   background-color: var(--btn);
   border: 1px solid transparent;
+  border-radius: 0.5em;
   font-size: large;
   cursor: pointer;
   text-decoration: none;
+  min-height: 44px;
 }

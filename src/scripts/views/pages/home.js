@@ -6,10 +6,10 @@ import { initSwalError } from '../../utils/swal-initiator';
 const Home = {
   async render() {
     return `
-      <div class="container">
+      <div tabindex="0" class="container">
         <div id="loading"></div>
         <div id="content">
-          <h1 class="content_title">Explore Restaurant</h1>
+          <h1 tabindex="0" class="content_title">Explore Restaurant</h1>
           <section id="explore"></section>
         </div>
       </div>

@@ -10,12 +10,13 @@ import { sendDataToWebsocket } from '../../utils/websocket-initiator';
 const Detail = {
   async render() {
     return `
-    <div class="container">
+    <div tabindex="0" class="container">
     <div id="loading"></div>
-    <div class="like" id="likeButtonContainer"></div>
     <div id="main-container">
-      <h2 class="detail-title">Resto Detail</h2>
-      <section id="detail-resto"></section>
+    
+    <div class="like" id="likeButtonContainer"></div>
+    <h2 tabindex="0" class="detail-title">Resto Detail</h2>
+    <section id="detail-resto"></section>
       <div class="form-review">
         <form autocomplete="on">
           <div class="mb-3">
@@ -44,7 +45,6 @@ const Detail = {
     loading.innerHTML = Spinner();
     try {
       const data = await RestaurantSource.getRestaurantDetail(url.id);
-      console.info(data);
       detailContainer.innerHTML += restoDetail(data.restaurant);
       LikeButtonInitiator.init({
         likeButtonContainer: document.querySelector('#likeButtonContainer'),

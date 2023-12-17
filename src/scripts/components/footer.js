@@ -5,7 +5,7 @@ class CustomFooterComponent extends HTMLElement {
 
   render() {
     this.innerHTML = `
-      <footer>
+      <footer tabindex="0">
       <p>Copyright © 2023 - NongkiSkuy</p>
       </footer>
     `;

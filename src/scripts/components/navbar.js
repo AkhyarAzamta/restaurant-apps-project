@@ -1,3 +1,5 @@
+/* eslint-enable class-methods-use-this */
+
 class NavigationBar extends HTMLElement {
   constructor() {
     super();
@@ -5,6 +7,8 @@ class NavigationBar extends HTMLElement {
     this.scrollToFavorite = this.scrollToFavorite.bind(this);
     this.scrollToElement = this.scrollToElement.bind(this);
   }
+
+  /* eslint-disable class-methods-use-this */
 
   connectedCallback() {
     this.render();
@@ -19,7 +23,6 @@ class NavigationBar extends HTMLElement {
     const targetElement = document.getElementById(elementId);
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth' });
-      console.log('yowwww');
     }
   }
 
@@ -37,7 +40,6 @@ class NavigationBar extends HTMLElement {
             <a href="/" class="font-brand"> NongkiSkuy </a>
           </div>
           <div class="container">
-            <a href="#content" class="link"></a>
             <button class="menu" aria-label="dropdown mobile" type="button">
               <span class="fa fa-bars"></span>
             </button>

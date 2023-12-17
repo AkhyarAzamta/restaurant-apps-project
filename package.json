@@ -7,7 +7,8 @@
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "test": "karma start",
-    "lint": "eslint ./src/scripts"
+    "lint": "eslint ./src/scripts",
+    "serve": "http-server dist --port 3000"
   },
   "author": "Akhyar Azamta",
   "license": "ISC",
@@ -21,6 +22,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.0",
     "html-webpack-plugin": "^5.5.4",
+    "http-server": "^14.1.1",
     "jasmine-ajax": "^4.0.0",
     "jasmine-core": "^5.1.1",
     "karma": "^6.4.2",

@@ -26,6 +26,8 @@
   }
   .menu {
     display: block;
+    min-height: 45px;
+    min-width: 45px;
     text-align: center;
     border: 1px solid transparent;
     background-color: transparent;

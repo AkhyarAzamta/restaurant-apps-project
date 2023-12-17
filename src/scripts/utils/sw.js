@@ -57,8 +57,8 @@ registerRoute(
 );
 registerRoute(
   ({ url }) =>
-    url.origin === 'https://fonts.googleapis.com' ||
-    url.origin === 'https://fonts.gstatic.com',
+    url.origin === 'https://fonts.googleapis.com'
+    || url.origin === 'https://fonts.gstatic.com',
   new StaleWhileRevalidate({
     cacheName: 'my-google-fonts-cache',
     plugins: [new ExpirationPlugin({ maxEntries: 50 })],
@@ -66,9 +66,9 @@ registerRoute(
 );
 registerRoute(
   ({ request }) =>
-    request.destination === 'style' ||
-    request.destination === 'script' ||
-    request.destination === 'worker',
+    request.destination === 'style'
+    || request.destination === 'script'
+    || request.destination === 'worker',
   new StaleWhileRevalidate({
     cacheName: 'my-assets-cache',
   }),

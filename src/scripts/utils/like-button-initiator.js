@@ -33,7 +33,7 @@ const LikeButtonInitiator = {
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
       await FavoriteIdb.deleteResto(this._restaurant.id);
-      initSwalSuccess('Remove to favorited!');
+      initSwalSuccess('Berhasil dihapus dari favorit');
       this._renderButton();
     });
   },
@@ -42,7 +42,7 @@ const LikeButtonInitiator = {
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
       await FavoriteIdb.putResto(this._restaurant);
-      initSwalSuccess('Add to favorited!');
+      initSwalSuccess('Berhasil ditambahkan ke favorit');
       this._renderButton();
     });
   },

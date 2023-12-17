@@ -29,7 +29,7 @@ nav {
   background-position: center;
   padding: 0 10%;
   box-sizing: border-box;
-  background: url('./images/hero-image_2.jpg');
+  background: url('../../public/images/hero-image_2.jpg');
 }
 
 .explore {
