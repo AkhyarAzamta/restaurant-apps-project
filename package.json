@@ -8,7 +8,7 @@
     "build": "webpack --config webpack.prod.js",
     "test": "karma start",
     "lint": "eslint ./src/scripts",
-    "serve": "http-server dist --port 3000"
+    "serve": "http-server public --port 3000"
   },
   "author": "Akhyar Azamta",
   "license": "ISC",

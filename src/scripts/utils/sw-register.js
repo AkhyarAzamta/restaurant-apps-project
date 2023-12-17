@@ -1,17 +1,17 @@
-import { Workbox } from 'workbox-window';
+import * as WorkboxWindow from 'workbox-window';
 
-const swRegister = () => {
-  if ('serviceWorker' in navigator) {
-    const wb = new Workbox('./sw.js');
-    wb.addEventListener('waiting', () => {
-      console.log("A new service worker has installed, but it can't activate until all tabs running the current version have fully unloaded.");
-    });
-    wb.addEventListener('activated', (event) => {
-      if (!event.isUpdate) {
-        console.log('Service worker activated for the first time!');
-      }
-    });
-    wb.register();
+const swRegister = async () => {
+  if (!('serviceWorker' in navigator)) {
+    console.log('Service Worker not supported in the browser');
+    return;
+  }
+
+  const wb = new WorkboxWindow.Workbox('/sw.bundle.js');
+  try {
+    await wb.register();
+    console.log('Service worker registered');
+  } catch (error) {
+    console.log('Failed to register service worker', error);
   }
 };
 
