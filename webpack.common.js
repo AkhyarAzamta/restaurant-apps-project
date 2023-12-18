@@ -1,9 +1,13 @@
 const path = require('path');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src/scripts/index.js'),
+  entry: {
+    app: path.resolve(__dirname, 'src/scripts/index.js'),
+    // sw: path.resolve(__dirname, 'src/scripts/sw.js'),
+  },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'public'),
@@ -26,8 +30,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
+      template: path.resolve(__dirname, 'src/templates/index.html'),
       favicon: path.resolve(__dirname, 'src/public/favicon.ico'),
     }),
     new CopyWebpackPlugin({
@@ -35,6 +39,25 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'public/'),
+        },
+      ],
+    }),
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: './sw.bundle.js',
+      runtimeCaching: [
+        {
+          urlPattern: ({ url }) => url.href.startsWith('https://api.themoviedb.org/3/'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'themoviedb-api',
+          },
+        },
+        {
+          urlPattern: ({ url }) => url.href.startsWith('https://image.tmdb.org/t/p/w500/'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'themoviedb-image-api',
+          },
         },
       ],
     }),
