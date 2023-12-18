@@ -5,7 +5,7 @@ const CONFIG = {
   DB_NAME: 'favorite',
   DB_VERSION: 1,
   OBJECT_STORE_NAME: 'nongkiskuy',
-  WEB_SOCKET_SERVER: 'wss://javascript.info/article/websocket/chat/ws',
+  WEB_SOCKET_SERVER: 'wss://movies-feed.dicoding.dev',
   CACHE_NAME: new Date().toISOString(),
 };
 
