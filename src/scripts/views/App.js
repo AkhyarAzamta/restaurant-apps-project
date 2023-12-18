@@ -25,19 +25,12 @@ class App {
     const page = routes[url];
     this._content.innerHTML = await page.render();
     await page.afterRender();
-  //   const skipContent = document.querySelector('.link');
-  //   const main = document.querySelector('#content');
-  //   const hero = document.querySelector('#hero');
-  //   skipContent.addEventListener('click', (e) => {
-  //     e.preventDefault();
-  //     main.scrollIntoView({ behavior: 'smooth' });
-  //     skipContent.blur();
-  //   });
-  //   if (url !== '/') {
-  //     hero.style.display = 'none';
-  //   } else {
-  //     hero.style.display = 'block';
-  //   }
+    const skipContent = document.querySelector('.link');
+    const main = document.querySelector('#content');
+    skipContent.addEventListener('click', (e) => {
+      e.preventDefault();
+      main.focus();
+    });
   }
 }
 
