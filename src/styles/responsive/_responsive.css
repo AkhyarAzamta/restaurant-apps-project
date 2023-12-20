@@ -86,10 +86,16 @@
     font-weight: 500;
     font-size: 14px;
   }
-  
+  .hero {
+    background:url(/images/hero/hero-small.jpg);
+}  
 }
 
 @media only screen and (min-width: 600px) {
+
+  .hero {
+    background:url(/images/hero/hero-large.jpg);
+}
 
   .content_title {
     margin-bottom: 1em;

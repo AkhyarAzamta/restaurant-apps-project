@@ -1,75 +1,37 @@
-/* eslint-disable import/no-extraneous-dependencies */
 const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const target = path.resolve(__dirname, 'src/public/images');
-const destination = path.resolve(__dirname, 'src/public/images/sharp');
+const targetDirectory = path.resolve(__dirname, 'src/public/images/hero');
+const destinationDirectory = path.resolve(__dirname, 'public/images');
 
-if (!fs.existsSync(destination)) {
-  fs.mkdirSync(destination);
+// Pastikan bahwa targetDirectory adalah direktori yang valid
+if (!fs.existsSync(targetDirectory) || !fs.statSync(targetDirectory).isDirectory()) {
+  console.error('Invalid target directory.');
+  process.exit(1);
 }
 
-fs.readdirSync(target).forEach((image) => {
-  if (image.includes('hero')) {
-    // convert hero image lebar 1200px
-    sharp(`${target}/${image}`)
-      .resize(1200)
-      .toFile(
-        path.resolve(
-          __dirname,
-          `${destination}/${image.split('.').slice(0, -1).join('.')}-1200.jpg`,
-        ),
-      );
+// Buat direktori tujuan jika belum ada
+if (!fs.existsSync(destinationDirectory)) {
+  fs.mkdirSync(destinationDirectory);
+}
 
-    // convert hero image lebar 1000px
-    sharp(`${target}/${image}`)
-      .resize(1000)
-      .toFile(
-        path.resolve(
-          __dirname,
-          `${destination}/${image.split('.').slice(0, -1).join('.')}-1000.jpg`,
-        ),
-      );
+// Baca file di dalam targetDirectory
+fs.readdirSync(targetDirectory).forEach((image) => {
+  const imagePath = path.resolve(targetDirectory, image);
 
-    // convert hero image lebar 600px
-    sharp(`${target}/${image}`)
-      .resize(600)
-      .toFile(
-        path.resolve(
-          __dirname,
-          `${destination}/${image.split('.').slice(0, -1).join('.')}-600.jpg`,
-        ),
-      );
-  } else {
-    // convert loading image lebar 400px
-    sharp(`${target}/${image}`)
-      .resize(400)
-      .toFile(
-        path.resolve(
-          __dirname,
-          `${destination}/${image.split('.').slice(0, -1).join('.')}-400.jpg`,
-        ),
-      );
+  // Pastikan bahwa item yang dibaca adalah file, bukan direktori
+  if (fs.statSync(imagePath).isFile()) {
+    // Gunakan path.basename untuk mendapatkan nama file tanpa ekstensi
+    const fileNameWithoutExtension = path.basename(image, path.extname(image));
 
-    // convert loading image lebar 300px
-    sharp(`${target}/${image}`)
-      .resize(300)
-      .toFile(
-        path.resolve(
-          __dirname,
-          `${destination}/${image.split('.').slice(0, -1).join('.')}-300.jpg`,
-        ),
-      );
+    // Proses gambar dengan ukuran yang diinginkan
+    sharp(imagePath)
+      .resize(800)
+      .toFile(path.resolve(destinationDirectory, `${fileNameWithoutExtension}-large.jpg`));
 
-    // convert loading image lebar 200px
-    sharp(`${target}/${image}`)
-      .resize(200)
-      .toFile(
-        path.resolve(
-          __dirname,
-          `${destination}/${image.split('.').slice(0, -1).join('.')}-200.jpg`,
-        ),
-      );
+    sharp(imagePath)
+      .resize(480)
+      .toFile(path.resolve(destinationDirectory, `${fileNameWithoutExtension}-small.jpg`));
   }
 });

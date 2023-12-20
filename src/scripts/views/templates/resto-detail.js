@@ -5,7 +5,10 @@ const restoDetail = (resto) => `
 <div class="detail">
     <div tabindex="0" class="img-container">
     <span aria-label="Lokasi di ${resto.city}," class="city">${resto.city}</span>
-        <img class="detail-img lazyload" alt="" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}"/>
+    <picture>
+    <source media="(max-width: 600px)" data-src="${CONFIG.BASE_IMAGE_URL_SMALL + resto.pictureId}">
+    <img class="detail-img lazyload" data-src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" 
+    </picture>
     <ul class="detail-info">
       <li>
         <i class="fas fa-store-alt icon-primary"></i>

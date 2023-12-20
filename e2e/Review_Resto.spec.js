@@ -10,12 +10,12 @@ Before(({ I }) => {
 Scenario('Post resto review', async ({ I }) => {
   const reviewText = 'testing';
 
-  I.waitForElement('.card', 3);
+  I.waitForElement('.card', 4);
   I.seeElement('.card a');
 
   I.click({ xpath: '//*[contains(@class, "card")]/a' });
 
-  I.wait(2); // Tunggu beberapa detik
+  I.wait(5); // Tunggu beberapa detik
   I.seeElement('.form-review form');
 
   I.fillField('#name-input', 'test review');

@@ -6,7 +6,11 @@ const restoCard = (resto) => `
       <a tabindex="0" href="#/detail/${resto.id}" class="card-a-tag">
       <div class="img-container">
       <span aria-label="Lokasi di ${resto.city}," class="city">${resto.city}</span>
-          <img class="card-image lazyload" crossorigin="anonymous" alt="" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}"/>
+      <pictu>
+      <source media="(max-width: 600px)" data-src="${CONFIG.BASE_IMAGE_URL_SMALL + resto.pictureId}">
+      <img class="card-image lazyload" data-src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" 
+      </pictu re>
+
           <span class="card-rating">
             <i aria-label="rating" class="fa fa-star"></i>
             <span>${resto.rating}</span>

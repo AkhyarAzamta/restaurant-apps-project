@@ -2,6 +2,7 @@ const CONFIG = {
   KEY: '1421',
   BASE_URL: 'https://restaurant-api.dicoding.dev/',
   BASE_IMAGE_URL: 'https://restaurant-api.dicoding.dev/images/large/',
+  BASE_IMAGE_URL_SMALL: 'https://restaurant-api.dicoding.dev/images/small/',
   DB_NAME: 'favorite',
   DB_VERSION: 1,
   OBJECT_STORE_NAME: 'nongkiskuy',
