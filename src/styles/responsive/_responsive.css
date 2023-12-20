@@ -87,14 +87,14 @@
     font-size: 14px;
   }
   .hero {
-    background:url(/images/hero/hero-small.jpg);
-}  
+    background:url("../../public/images/sharp/hero-large.jpg");
+}
 }
 
 @media only screen and (min-width: 600px) {
 
   .hero {
-    background:url(/images/hero/hero-large.jpg);
+    background:url("../../public/images/hero/hero.jpg");
 }
 
   .content_title {
