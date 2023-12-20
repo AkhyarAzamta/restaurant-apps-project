@@ -17,19 +17,31 @@ const openIdb = openDB(DB_NAME, DB_VERSION, {
 });
 
 const FavoriteIdb = {
+  async getResto(id) {
+    if (!id) {
+      return;
+    }
+    // eslint-disable-next-line consistent-return
+    return (await openIdb).get(OBJECT_STORE_NAME, id);
+  },
+
   async getAllResto() {
     return (await openIdb).getAll(OBJECT_STORE_NAME);
   },
-  async getResto(id) {
-    return (await openIdb).get(OBJECT_STORE_NAME, id);
+
+  async putResto(restaurant) {
+    // eslint-disable-next-line no-prototype-builtins
+    if (!restaurant.hasOwnProperty('id')) {
+      return;
+    }
+
+    // eslint-disable-next-line consistent-return
+    return (await openIdb).put(OBJECT_STORE_NAME, restaurant);
   },
+
   async deleteResto(id) {
     return (await openIdb).delete(OBJECT_STORE_NAME, id);
   },
-  async putResto(resto) {
-    return (await openIdb).put(OBJECT_STORE_NAME, resto);
-  },
-
 };
 
 export default FavoriteIdb;

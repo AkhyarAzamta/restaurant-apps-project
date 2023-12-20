@@ -36,7 +36,7 @@ class NavigationBar extends HTMLElement {
       <nav>
         <div class="brand">
           <div class="logo-content">
-            <img src="../images/logo.png" alt="logo" class="logo-img">
+            <img src="../icons/96x96.png" alt="logo" class="logo-img">
             <a href="/" class="font-brand"> NongkiSkuy </a>
           </div>
           <div class="container">

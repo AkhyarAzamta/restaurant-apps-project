@@ -5,7 +5,7 @@ const restoDetail = (resto) => `
 <div class="detail">
     <div tabindex="0" class="img-container">
     <span aria-label="Lokasi di ${resto.city}," class="city">${resto.city}</span>
-        <img class="detail-img" alt="" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}"/>
+        <img class="detail-img lazyload" alt="" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}"/>
     <ul class="detail-info">
       <li>
         <i class="fas fa-store-alt icon-primary"></i>

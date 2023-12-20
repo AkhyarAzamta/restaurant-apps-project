@@ -1,6 +1,7 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { merge } = require('webpack-merge');
 const path = require('path');
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -18,5 +19,18 @@ module.exports = merge(common, {
     },
     compress: true,
   },
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new ImageminWebpWebpackPlugin({
+      config: [
+        {
+          test: /\.(jpe?g|png)/,
+          options: {
+            quality: 40,
+          },
+        },
+      ],
+      overrideExtension: true,
+    }),
+  ],
 });
